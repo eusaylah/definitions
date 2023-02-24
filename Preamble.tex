@@ -1,0 +1,53 @@
+\documentclass[oneside]{article}
+
+% ----- Packages ----- %
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{comment}
+\usepackage[center]{titlesec}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+
+
+% ----- Title ----- %
+\title{Definitions}
+\author{}
+\date{}
+
+
+% ----- Lengths setup ----- %
+\setlength{\parskip}{0.5cm}
+
+
+% ----- Title format setup ----- %
+\titlespacing*{\section}{0cm}{0cm}{1cm}[0cm]
+
+
+% ----- Enumerate setup ----- %
+\setlist[description]{style=unboxed,topsep=0pt,itemsep=0pt,parsep=\parskip,labelsep=0.15cm, font=\normalfont\bfseries\itshape}
+\setlist[enumerate]{wide,topsep=0pt,itemsep=0pt,parsep=\parskip,labelsep=0.2cm,labelindent=0pt}
+
+
+% ----- Header and footer setup ----- %
+\fancyhf{}
+\fancyhead[C]{\textbf{Definitions}}
+%\fancyhead[R]{\textbf{}}
+\fancyfoot[R]{\textbf{\thepage}}
+
+\fancypagestyle{1page}{
+    \fancyhf{}
+    \fancyfoot[L]{\textbf{Definitions}}
+    \fancyfoot[R]{\textbf{\thepage}}
+    \renewcommand{\headrulewidth}{0pt}
+}
+
+\pagestyle{fancy}
+
+
+% ----- Commands ----- %
+\newcommand{\note}[2][]{\vspace{\parskip} \\ \textit{Note #1--- #2}}
+
+
+
+\input{Sort alph.tex}

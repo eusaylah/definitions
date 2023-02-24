@@ -1,0 +1,17 @@
+\usepackage{datatool}
+
+\newcommand{\sortitem}[2]{%
+\DTLnewrow{list}% Create a new entry
+\DTLnewdbentry{list}{sortlabel}{#1}% Add entry sortlabel
+\DTLnewdbentry{list}{description}{#2}% Add entry description
+}
+
+\newenvironment{sortedlist}{%
+\DTLifdbexists{list}{\DTLcleardb{list}}{\DTLnewdb{list}}% Create new/discard old list
+}{%
+\DTLsort{sortlabel}{list}% Sort list
+\begin{description}%
+\DTLforeach*{list}{\theSortlabel=sortlabel,\theDesc=description}{%
+\item[\theSortlabel] \theDesc}% Print each item
+\end{description}%
+}
